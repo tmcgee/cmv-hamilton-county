@@ -1,0 +1,113 @@
+.welWhatDisHelpAboutDijit .dijitDialogTitleBar {
+    text-align: center;
+    background-color: #F5F5F5;
+}
+.welWhatDisHelpAboutDijit .helpError {
+    color: #FF0000;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 5px 15px;
+}
+.welWhatDisHelpAboutDijit .dijitTitlePane .dijitTitlePaneContentInner {
+    font-size: 12px;
+    margin: 5px 15px;
+    padding: 0;
+}
+.welWhatDisHelpAboutDijit .dijitTitlePane .dijitTitlePaneTitle {
+    font-size: 15px;
+    font-weight: bold;
+}
+.welWhatDisHelpAboutDijit .dijitDialogPaneActionBar {
+    padding: 5px;
+    text-align: center;
+}
+.welWhatDisHelpAboutDijit .dijitTitlePane .dijitTitlePaneContentInner UL {
+    margin-left: -10px;
+}
+.welWhatDisHelpAboutDijit .helpIntro {
+    margin: 0 10px 10px;
+    font-size: 14px;
+}
+.dijitDialogUnderlay {
+    opacity: 0.3 !important;
+    /*background-color: red !important;*/
+}
+.welWhatDisHelpAboutDijit .generalDigits .dijitTitlePaneTitle {
+    background-color: #CACACA;
+    font-size: 15px;
+    font-weight: bold;
+}
+.welWhatDisHelpAboutDijit .progressIcon {
+    background-image: url("../images/clock.png");
+    background-repeat: no-repeat;
+    background-size: 95% auto;
+    height: 24px;
+    margin: 0px -10px;
+    transition-duration: .3s;
+    transition-timing-function: linear;
+    transition-property: height width margin;
+    width: 24px;
+}
+.welWhatDisHelpAboutDijit .progressButton {
+    bottom: -2px;
+    left: 6px;
+    position: absolute;
+}
+.welWhatDisHelpAboutDijit .progressIcon:hover {
+    background-image: url("../images/clock.png");
+    background-repeat: no-repeat;
+    height: 36px;
+    margin: -6px -16px;
+    width: 36px;
+}
+.welWhatDisHelpAboutDijit .progressButton .dijitButtonNode {
+    background-color: rgba(0, 0, 0, 0) !important;
+    background-image: none !important;
+    border-style: none !important;
+    box-shadow: none !important;
+}
+.welWhatDisHelpAboutDijit .dijitArrowButtonInner {
+    display: none;
+}
+.progressDialog h2 {
+    color: #000000;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    opacity: 0.5;
+    position: absolute;
+    right: 7px;
+    top: -25px;
+}
+.progressTitle {
+    text-align: center;
+}
+.showAtStartup {
+    bottom: 10px;
+    position: absolute;
+    right: 15px;
+}
+.progressTable {
+    border-collapse: collapse;
+}
+.progressTable td {
+    background-color: #E5E5E5;
+    border: 1px solid #000000;
+    padding: 0 5px;
+}
+.progressDialog div {
+    margin: 0px;
+}
+.progressDialog div + div {
+    padding: 5px 0 30px;
+}
+.showMetricsAtStartup {
+    bottom: 15px;
+    left: 20px;
+    position: absolute;
+}
+.sendButton {
+    bottom: 9px;
+    position: absolute;
+    right: 20px;
+}

@@ -1,0 +1,33 @@
+.gis_ShareDijit {
+}
+
+.gis_ShareDijit .emailIcon {
+    background-image: url(../images/mailbox.png);
+    width: 16px;
+    height: 16px;
+}
+
+.gis_ShareDijit .clipboardIcon {
+    background-image: url(../images/copy.png);
+    width: 16px;
+    height: 16px;
+}
+
+.gis_ShareDijit .feedbackIcon {
+    background-image: url(../images/mailbox.png);
+    width: 16px;
+    height: 16px;
+}
+.gis_ShareDijit .formContainer {
+    /*border: 1px solid #bbb;*/
+    margin-bottom: -1px;
+    width: 100%;
+}
+#copyToClipboard_underlay {
+    background-color: red;
+}
+.gis_ShareDijit .dijitButtonNode {
+    font-size: 13px !important;
+    padding: 3px 5px !important;
+    margin: 0px !important;
+}

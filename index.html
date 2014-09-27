@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <!--The viewport meta tag is used to improve the presentation and behavior on iOS devices-->
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+        <title>Hamilton County Map Viewer</title>
+        <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.7/js/dojo/dojo/resources/dojo.css">
+        <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.7/js/esri/css/esri.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
+    <body class="dbootstrap">
+        <div class="header">
+            <div class="headerLogo">
+                <img src="images/socialmedialogo_2012.png"/>
+            </div>
+            <div class="headerTitle">
+                Hamilton County, Indiana
+                <div class="subHeaderTitle">
+                    Public Access to Public Data
+                </div>
+            </div>
+            <div class="search">
+                <div id='geocodeDijit'>
+                </div>
+            </div>
+            <!--lcs div class="headerLinks">
+                <div style="text-align:right;">
+                    <a id="helpA" href="#">Help</a>
+                </div>
+            </div-->
+            <div class="headerLinks">
+                <div style="text-align:right;">
+                    <a id="welWhatDisHelpAboutA" href="#">Help</a>
+                </div>
+            </div><!-- lcs - Splash Screen -->
+            <div id="mapTips" class="mapTips"><!-- lcs - Map Tips -->
+                <input id="chkMapTips" type="checkbox" checked>  Map Tips</input>
+            </div>
+        </div>
+        <div id="sidebarCollapseButton" class="sidebarCollapseButton close" style="display:none;">
+        </div>
+        <script type="text/javascript">
+            var dojoConfig = {
+                async: true,
+                packages: [{
+                    name: "viewer",
+                    location: location.pathname.replace(/[^\/]+$/, '') + "js/viewer"
+                },{
+                    name: "gis",
+                    location: location.pathname.replace(/[^\/]+$/, '') + "js/gis"
+                },{
+                    name: "dbootstrap",
+                    location: location.pathname.replace(/[^\/]+$/, '') + "js/dbootstrap"
+                },{
+                    name: "xstyle",
+                    location: location.pathname.replace(/[^\/]+$/, '') + "js/dbootstrap"
+                }]
+            };
+        </script>
+        <script src="//js.arcgis.com/3.7" type="text/javascript"></script>
+        <script type="text/javascript">
+            require(['dbootstrap','viewer/Controller'], function(dbootstrap, Controller){
+                Controller.startup();
+            });
+            
+            //lcs - Detect device type
+            require(['dojo/dom'], function(dom) {
+                this.isiOS = false;
+                this.isBrowser = false;
+                this.isMobileDevice = false;
+                this.isTablet = false;
+                var chkMapTipsDom = dom.byId('chkMapTips');
+                var mapTipsDom = dom.byId('mapTips');
+                var userAgent = window.navigator.userAgent;
+                if (userAgent.indexOf('iPhone') >= 0 || userAgent.indexOf('iPad') >= 0) {
+                    this.isiOS = true;
+                    chkMapTipsDom.checked=false;
+                    mapTipsDom.style.visibility='hidden';  
+                    // console.log('this.isiOS:', this.isiOS);
+                }
+
+                if (userAgent.indexOf('Android') >= 0 || userAgent.indexOf('iPhone') >= 0) {
+                    this.isMobileDevice = true;
+                    chkMapTipsDom.checked=false;
+                    mapTipsDom.style.visibility='hidden';  
+                    // console.log('this.isMobileDevice:', this.isMobileDevice);
+                } else if (userAgent.indexOf('iPad') >= 0) {
+                    this.isTablet = true;
+                    chkMapTipsDom.checked=false;
+                    mapTipsDom.style.visibility='hidden';  
+                    // console.log('this.isTablet:', this.isTablet);
+                } else {
+                    this.isBrowser = true;
+                    // console.log('this.isBrowser:', this.isBrowser);
+                }
+            });
+            
+            //lcs - Notify the chkMapTips checkbox was changed
+            require(['dojo/dom', 'dojo/on', 'dojo/topic'], function(dom, on, topic) {
+                var chkMapTipsDom = dom.byId('chkMapTips');
+                on(chkMapTipsDom, 'change', function(evt) {
+                    topic.publish('USER_PREFERENCES', { showMapTips: chkMapTipsDom.checked });
+                });
+            });
+        </script>
+    </body>
+</html>

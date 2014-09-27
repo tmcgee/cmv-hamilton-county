@@ -1,0 +1,50 @@
+.gis-dijit-Help {
+    background-color: #EEEEEE;
+    border: 2px solid #888888;
+    border-radius: 10px;
+    color: #000000;
+    cursor: pointer;
+    font-size: 0.9em;
+    max-height: 600px;
+    max-width: 500px;
+    opacity: .95;
+    overflow: auto;
+}
+.gis-dijit-Help:hover {
+    border: 2px solid #660000;
+}
+.gis-dijit-Help h2 {
+    color: #000000;
+    font-size: 15px;
+    font-weight: bold;
+    margin: -3px 0px -20px;
+    opacity: 0.50;
+    padding: 5px;
+    text-align: right;
+}
+.gis-dijit-Help h3 {
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0px 0px;
+    padding: 5px 40px 5px;
+    text-align: center;
+    text-decoration: underline;
+}
+.gis-dijit-Help h4 {
+    color: red;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0px 10px -15px;
+    padding: 0px 10px 10px;
+}
+.gis-dijit-Help p {
+    color: #000000;
+    font-size: 12px;
+    margin: 0 15px;
+    padding: 0 10px;
+}
+.gis-dijit-Help div {
+    margin: 0px 5px;
+    padding 0px 0px;
+}

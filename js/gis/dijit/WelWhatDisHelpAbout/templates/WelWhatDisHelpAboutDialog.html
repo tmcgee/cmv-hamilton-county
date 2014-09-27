@@ -1,0 +1,152 @@
+<div class="dijitDialog ${baseClass}" role="dialog" aria-labelledby="${id}_title">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+        <span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"
+            role="heading" level="1">
+        </span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon"
+            data-dojo-attach-event="ondijitclick: close" title="${buttonCancel}"
+            role="button" tabIndex="-1">
+            <span data-dojo-attach-point="closeText" class="closeText" title="${buttonCancel}">
+                x
+            </span>
+        </span>
+    </div>
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent">
+        <div style="width:500px; height:400px; padding:5px;">
+            <div data-dojo-type="dijit/layout/TabContainer" data-dojo-attach-point="tabContainer" style="width: 100%; height: 100%;">
+                <div data-dojo-type="dijit/layout/ContentPane" id="welcome" title="Welcome" style="text-align: center; padding: 20px, 10px" 
+                    data-dojo-attach-event="onHide:_hideShowAtStartup, onShow:_showShowAtStartup">
+                    <div>
+                        <p style="font-size:16px"><b>Welcome to the Hamilton County Map Viewer Version 0.9</b></p>
+                        <p>
+                            <img src='images/logo-hamco.png'/><br>
+                            This map viewer application is based on the<br> 
+                            <a href='https://github.com/DavidSpriggs/ConfigurableViewerJSAPI' target='_blank'>
+                            Configurable ESRI JS API Viewer</a> by David Spriggs.<br>
+                            Many thanks to David.<br>
+                            <br>
+                            See the <b>About</b> tab for more information.
+                        </p>
+                    </div>
+                    <div style="color: red">
+                        <hr style="border-color: red"><hr style="border-color: red">
+                        This application is a work in progress, but it does work on mobile devices.
+                        You are seeing it even though it is new and lacks many of the features of our 
+                        desktop application.  Please be patient as we test and enhance it.
+                        <hr style="border-color: red"><hr style="border-color: red">
+                    </div>
+                </div>
+                <div data-dojo-type="dijit/layout/ContentPane" title="What's New">
+                    This application is brand new on January 2, 2014.
+                </div>
+                <div data-dojo-type="dijit/layout/ContentPane" title="Disclaimer" style="padding: 30px, 10px">
+                    <table style="width: 100%; height: 100%;">
+                        <tr style="valign: middle">
+                            <td>
+                                The information on this web site is provided and hosted 
+                                by Hamilton County, Indiana. Continued use of this web site is conditional upon your 
+                                explicit acceptance of the terms and conditions set forth in this disclaimer document. 
+                                The data provided herein may be inaccurate and/or out of date. Any person or entity 
+                                who relies on this data for any purpose whatsoever does so solely at their own risk. 
+                                Neither Hamilton County Indiana nor its employees or officers warrant the accuracy, 
+                                reliability, or timeliness of any of the data provided herein. This data is provided 
+                                &quot;as is&quot; without warranty of any kind. The recipient may copy this data into computer 
+                                memory or onto computer storage devices and prepare derivative works from it.
+                                <a href='http://www2.hamiltoncounty.in.gov/gis/county.html'
+                                target='_blank'>Hamilton County Ordinance 11-26-07-B</a>
+                                Section 5 states: <i><b>Pursuant to the provisions of 
+                                <a href='http://www.in.gov/legislative/ic/code/title5/ar14/ch3.html'
+                                target='_blank'>Indiana Code 5-14-3-3(e)</a>
+                                no person other than those authorized by the County may reproduce, store, grant access, 
+                                deliver, or sell any information obtained from any department or office of the County 
+                                to any other person, partnership, or corporation for commercial purposes.</b></i> Hamilton County 
+                                may elect to discontinue this service without notice at any point in the future.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div data-dojo-type="dijit/layout/ContentPane" id="help" data-dojo-attach-point="help" title="Help">
+                    <div class="helpIntro">
+                        Help is organized by function and by Widget.  Help for each Widget is also available from the 
+                        Quick Help button (<div style="background-color:#DDDDDD; display:inline;">
+                                               <img src='images/w_question.png' height='12px' width='12px'></img>
+                                           </div>) on the Widget.  The Quick Help will close after a few seconds if
+                        the cursor is not over it.  Close it at any time by clicking on it.<br>
+                    </div>
+                    <div data-dojo-type="dijit/TitlePane" data-dojo-attach-point="navigateHelp" class="generalDigits"
+                         data-dojo-props="open:false, href:'./js/viewer/templates/help/navigate.html', title:'Navigation'">
+                    </div>
+                    <div data-dojo-type="dijit/TitlePane" data-dojo-attach-point="searchHelp" class="generalDigits" 
+                         data-dojo-props="open:false, href:'./js/viewer/templates/help/search.html', title:'Search'">
+                    </div>
+                    <div data-dojo-type="dijit/TitlePane" data-dojo-attach-point="basemapsHelp" class="generalDigits" 
+                         data-dojo-props="open:false, href:'./js/viewer/templates/help/basemaps.html', title:'Basemaps'">
+                    </div>
+                </div>
+                <div data-dojo-type="dijit/layout/ContentPane" title="About">
+                    <div style="width:100%; text-align:center">
+                        <img src='images/logo-hamco.png'/>
+                        <br><br>
+                        This map viewer application is based on the<br>
+                        <a href='https://github.com/DavidSpriggs/ConfigurableViewerJSAPI' target='_blank'>
+                        Configurable ESRI JS API Viewer</a> by David Spriggs.<br>
+                        Many thanks to David.
+                        <br><br>
+                        All differences between this application and the Esri Flex Viewer
+                        are due to work by <b>Joe Seig</b> and <b>Larry Stout</b> of the Hamilton County Indiana Information 
+                        System Services (ISS) Department.
+                        <br><br>
+                        Many of the features were suggested by our users, both within the government of Hamilton County and without; 
+                        both within the State of Indiana and without.  We appreciate all of the comments and suggestions we have 
+                        received.  User feedback is the lifeblood of this application.
+                    </div>
+                </div>
+                <div data-dojo-type="dijit/layout/ContentPane" title="Notice" style="padding: 30px, 10px">
+                    <div style="width:100%; text-align:center">
+                        <img src='images/logo-hamco.png'/><br><br>
+                        <hr><hr>
+                        <br>
+                        This tab will display the details of scheduled<br>
+                        maintenance outages that affect this application.<br>
+                        <br>
+                        When there is an outage scheduled, you will see<br> 
+                        this tab on startup, even if you don't normally see<br>
+                        the Welcome screen when starting this application.<br> 
+                        <br>
+                        <hr><hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dijitDialogPaneActionBar">
+            <div class="progressButton" data-dojo-type="dijit.form.DropDownButton" data-dojo-attach-point="progressDropDownDijit" 
+                 data-dojo-attach-event="onClick:stopTimer" data-dojo-props="iconClass:'progressIcon',showLabel:false, dropDownPosition:['above']">
+                <span>Startup Metrics</span>
+                <div class="progressDialog" data-dojo-type="dijit.TooltipDialog" data-dojo-attach-point="progressDijit" style="width:490px;">
+                    <div class="progressTitle" data-dojo-attach-point="progressTitle">
+                    </div>
+                    <div style="text-align:center; align:center; width:100%;">
+                        <table class="progressTable" data-dojo-attach-point="progressTable" style="width:100%;"></table>
+                    </div>
+                    <h2>X</h2>
+                    <div class="showMetricsAtStartup">
+                        Show Metrics at Startup:
+                        <input type="checkbox" data-dojo-type="dijit.form.CheckBox" data-dojo-props="name:'startupMetrics'"
+                               data-dojo-attach-point="startupMetricsDijit" data-dojo-attach-event="onChange:_onStartupMetricsChange"/>
+                    </div>
+                    <button class="sendButton" data-dojo-type="dijit.form.Button" data-dojo-attach-event="onClick:sendToDeveloper">
+                        Send to Developer
+                    </button>
+                </div>
+            </div>
+            <button class="closeButton" data-dojo-type="dijit.form.Button" data-dojo-attach-event="onClick:close">
+                Close
+            </button>
+            <div class="showAtStartup" data-dojo-attach-point="startupDijitDiv" >
+                Show at Startup:
+                <input id="showAtStartup" type="checkbox" data-dojo-type="dijit.form.CheckBox" data-dojo-props="name:'startup'"
+                       data-dojo-attach-point="startupDijit" data-dojo-attach-event="onChange:_onStartupChange"/>
+            </div>
+        </div>
+    </div>
+</div>

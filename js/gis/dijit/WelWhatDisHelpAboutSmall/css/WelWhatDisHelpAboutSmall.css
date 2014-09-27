@@ -1,0 +1,47 @@
+.welWhatDisHelpAboutSmallDijit .dijitDialogTitleBar {
+    text-align: center;
+    background-color: #F5F5F5;
+}
+.welWhatDisHelpAboutSmallDijit .dijitDialogTitle {
+    font-size: 15px;
+}
+.welWhatDisHelpAboutSmallDijit .dijitDialogCloseIcon .closeText {
+    font-size: 16px;
+    margin-right: -10px;
+    margin-top: -8px;
+}
+.welWhatDisHelpAboutSmallDijit .helpError {
+    color: #FF0000;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 5px 15px;
+}
+.welWhatDisHelpAboutSmallDijit .dijitTitlePane .dijitTitlePaneContentInner {
+    font-size: 12px;
+    margin: 5px 15px;
+    padding: 0;
+}
+.welWhatDisHelpAboutSmallDijit .dijitTitlePane .dijitTitlePaneTitle {
+    font-size: 12px;
+    font-weight: bold;
+}
+.welWhatDisHelpAboutSmallDijit .dijitDialogPaneActionBar {
+    padding: 5px;
+    text-align: center;
+}
+.welWhatDisHelpAboutSmallDijit .dijitTitlePane .dijitTitlePaneContentInner UL {
+    margin-left: -10px;
+}
+.welWhatDisHelpAboutSmallDijit .helpIntro {
+    margin: 0 10px 10px;
+    font-size: 14px;
+}
+.dijitDialogUnderlay {
+    opacity: 0.3 !important;
+    /*background-color: red !important;*/
+}
+.welWhatDisHelpAboutSmallDijit .generalDigits .dijitTitlePaneTitle {
+    background-color: #CACACA;
+    font-size: 15px;
+    font-weight: bold;
+}

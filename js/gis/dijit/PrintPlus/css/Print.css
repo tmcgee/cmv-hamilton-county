@@ -1,0 +1,125 @@
+/*lcs Print Enhancements - added "position: relative" to anchor the position of relativeScale*/
+.gis_PrintPlusDijit {
+    width: 100%;
+    position: relative;
+}
+
+.gis_PrintPlusDijit .printResult {
+    /*border: 1px solid #CCCCCC;*/
+    height: 28px;
+    margin-bottom: 3px;
+    width: 100%;
+}
+
+.gis_PrintPlusDijit .printResult .printResultTable {
+    width: 100%;
+}
+
+.gis_PrintPlusDijit .printResult .bold {
+    font-weight: bold;
+}
+
+.gis_PrintPlusDijit .printResultError {
+    font-weight: bold;
+    color: red;
+}
+
+.gis_PrintPlusDijit .printResultHover table:hover {
+    background-color: #D4E7F8;
+    cursor: pointer;
+}
+
+.gis_PrintPlusDijit .buttonActionBar {
+    /*background-color: #F2F2F2;
+    border: 1px solid #CDCDCD;*/
+    padding: 3px 0px 2px 0px;
+    text-align: right;
+    width: 100%;
+}
+
+.gis_PrintPlusDijit .formContainer {
+    /*border: 1px solid #bbb;*/
+    margin-bottom: -1px;
+    width: 100%;
+}
+
+.gis_PrintPlusDijit .resultsContainer {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.gis_PrintPlusDijit .printIcon {
+    background-image: url(../images/print.png);
+    width: 16px;
+    height: 16px;
+}
+
+.gis_PrintPlusDijit .clearIcon {
+    background-image: url(../images/clear.png);
+    width: 16px;
+    height: 16px;
+}
+
+.gis_PrintPlusDijit .settingsIcon {
+    background-image: url(../images/settings.png);
+    width: 16px;
+    height: 16px;
+}
+
+/*lcs Print Enhancements - this position must be coordinated with the position of the scaleBox row*/
+#relativeScale {
+    position: absolute;
+    left: 145px;
+    top: 156px;
+}
+
+/*lcs Print Enhancements - this position must be coordinated with the position of the format row*/
+#titleBlock {
+    position: absolute;
+    left: 175px;
+    top: 84px;
+}
+
+#mapSketch {
+/*     position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+ */}
+
+#paperMap {
+/*     position: relative;
+    left: 0px; 
+    top: 0px; 
+    width: 260px; 
+    height: 155px; 
+    border: 1px solid #000000; 
+    background-color: rgba(255, 0, 0, 0.3);
+ */}
+
+#browserMap {
+/*     position: absolute;
+    left: 50px;
+    top: 50px;
+    width: 100px;
+    height: 55px;
+    border: 1px solid #000000;
+    background-color: rgba(0, 0, 255, 1.0);
+ */}
+
+#paperMapLegend {
+/*     position: relative;
+    width: 30px; 
+    height: 20px; 
+    border: 1px solid #000000; 
+    background-color: rgba(255, 0, 0, 0.3);
+ */}
+
+#browserMapLegend {
+/*     position: relative;
+    width: 30px;
+    height: 20px;
+    border: 1px solid #000000;
+    background-color: rgba(0, 0, 255, 1.0);
+ */}

@@ -1,0 +1,233 @@
+<div class="gis_PrintPlusDijit">
+    <div class="f">
+        <div data-dojo-type="dijit.form.Form" data-dojo-attach-point="printSettingsFormDijit">
+            <div id="relativeScale"><!-- lcs Print Enhancements (added relative scale) -->
+                Relative Scale
+            </div>
+            <div id="titleBlock"><!-- lcs Print Enhancements (added title block) -->
+                Title Block:
+                <input type="checkbox" data-dojo-type="dijit.form.CheckBox" data-dojo-props="name:'titleBlock',value:true,checked:true"
+                 data-dojo-attach-point="titleBlockDijit" data-dojo-attach-event="onChange:_onTitleBlockChange"/>
+            </div>
+            <table cellspacing="5" style="width:100%;">
+                <tr>
+                    <td style="width:50px;">
+                        Title:
+                    </td>
+                    <td>
+                        <input type="text" data-dojo-type="dijit.form.ValidationTextBox" data-dojo-props="name:'title',trim:true,required:true,style:'width:100%;',value:'${defaultTitle}'"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:50px;">
+                        Author:
+                    </td>
+                    <td>
+                        <input type="text" data-dojo-type="dijit.form.ValidationTextBox" data-dojo-props="name:'author',trim:true,required:true,style:'width:100%;',value:'${authorText}'"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Format:
+                    </td>
+                    <td>
+                        <input type="select" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="name:'format',autoComplete:true,required:true,searchAttr:'name',style:'width:40%;'"
+                        data-dojo-attach-point="formatDijit" /><!--lcs Print Enhancements - reduced width from 100% -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Layout:
+                    </td>
+                    <td>
+                        <input type="select" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="name:'layout',autoComplete:true,required:true,searchAttr:'name',style:'width:100%;'"
+                        data-dojo-attach-point="layoutDijit" data-dojo-attach-event="onChange:_onLayoutChange"/><!--lcs Print Enhancements - added event -->
+                    </td>
+                </tr>
+                <tr id="scaleBoxRow"><!-- lcs Print Enhancements - added scale text box -->
+                    <td>
+                        Scale:
+                    </td>
+                    <td>
+                        <input type="text" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="name:'scaleBox',style:'width:30%;'"
+                        data-dojo-attach-point="scaleBoxDijit" data-dojo-attach-event="onChange:_onScaleBoxChange"/><!--lcs Print Enhancements - reduced width from 100% -->
+                    </td>
+                </tr>
+                <tr id="scaleSliderRow"><!-- lcs Print Enhancements (added scale slider) -->
+                    <td>
+                    </td>
+                    <td>
+                        <div id="scaleSlider">
+                            <div type="slider" data-dojo-type="dijit.form.HorizontalSlider" data-dojo-props="name:'scaleSlider',style:'width:100%;',intermediateChanges:true,showButtons:false"
+                            data-dojo-attach-point="scaleSliderDijit" data-dojo-attach-event="onChange:_onScaleSliderChange"/>
+                            <!--div data-dojo-type="dijit/form/HorizontalRule" data-dojo-attach-point="scaleHorizontalRuleDijit" container="bottomDecoration" style="height:5px;"></div-->
+                            <!--ol data-dojo-type="dijit/form/HorizontalRuleLabels" data-dojo-attach-point="scaleHorizontalRuleLabelsDijit" container="bottomDecoration" style="height:1em;font-size:75%;">
+                            </ol-->
+                        </div>
+                   </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="buttonActionBar">
+        <div data-dojo-type="dijit.form.DropDownButton" data-dojo-props="iconClass:'settingsIcon',showLabel:true"
+        data-dojo-attach-point="layoutDropDownDijit">
+            <span>
+                Settings
+            </span>
+            <div data-dojo-type="dijit.TooltipDialog">
+                <div style="width:260px;">
+                    <div id="mapScaleExtent" style="font-weight:bold;"><!-- lcs Print Enhancements - added id -->
+                        Map scale/extent:
+                    </div>
+                    <div id="preserve" data-dojo-type="dijit.form.Form" data-dojo-attach-point="preserveFormDijit"><!-- lcs Print Enhancements - added id -->
+                        <table cellspacing="5">
+                            <tr>
+                                <td style="vertical-align:middle;">
+                                    Preserve:
+                                </td>
+                                <td>
+                                    <input type="radio" data-dojo-type="dijit.form.RadioButton" data-dojo-props="name:'preserveScale',checked:true,value:'true'"
+                                        data-dojo-attach-event="onChange:_adjustMapSketch"/>
+                                    map scale&nbsp;&nbsp;
+                                    <input type="radio" data-dojo-type="dijit.form.RadioButton" data-dojo-props="name:'preserveScale',value:'false'"
+                                    />
+                                    map extent
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="fullLayoutOptions" style="font-weight:bold;"><!-- lcs Print Enhancements - added id -->
+                        Full layout options:
+                    </div>
+                    <div id="scaleLegendOptions" data-dojo-type="dijit.form.Form" data-dojo-attach-point="layoutFormDijit"><!-- lcs Print Enhancements - added id -->
+                        <table cellspacing="5">
+                            <tr>
+                                <td>
+                                    Scale bar units:
+                                </td>
+                                <td>
+                                    <select data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="name:'scalebarUnit',style:'width:100px;'">
+                                        <option value="Miles" selected="selected">
+                                            Miles
+                                        </option>
+                                        <option value="Kilometers">
+                                            Kilometers
+                                        </option>
+                                        <option value="Meters">
+                                            Meters
+                                        </option>
+                                        <option value="Feet">
+                                            Feet
+                                        </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Include legend:
+                                </td>
+                                <td>
+                                    <input type="checkbox" data-dojo-type="dijit.form.CheckBox" data-dojo-props="name:'legend',value:true,checked:true"
+                                    />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="font-weight:bold;">
+                        Print Quality options:
+                    </div>
+                    <div id="dpi" data-dojo-type="dijit.form.Form" data-dojo-attach-point="mapQualityFormDijit">
+                        <table cellspacing="5">
+                            <tr>
+                                <td>
+                                    DPI:
+                                </td>
+                                <td>
+                                    <input type="text" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="name:'dpi',required:true,value:'${defaultDpi}',style:'width:100px;'"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="mapOnlyOptions" style="font-weight:bold;"><!-- lcs Print Enhancements - added id -->
+                        Printed Map Dimensions:
+                    </div>
+                    <div id="mapWidthHeight" data-dojo-type="dijit.form.Form" data-dojo-attach-point="mapOnlyFormDijit"><!-- lcs Print Enhancements - added id -->
+                        <table cellspacing="5">
+                            <tr>
+                                <td>
+                                    Width:
+                                </td>
+                                <td>
+                                    <input type="text" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="name:'width',required:true,value:11,style:'width:70px;'"
+                                        data-dojo-attach-event="onChange:_adjustMapSketch"/>
+                                </td>
+                                <td>
+                                    Height:
+                                </td>
+                                <td>
+                                    <input type="text" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="name:'height',required:true,value:8.5,style:'width:70px;'"
+                                        data-dojo-attach-event="onChange:_adjustMapSketch"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <table cellspacing="5" style="position:relative;left:40px;">
+                            <tr>
+                                <td style="vertical-align:middle;">
+                                    Units:
+                                </td>
+                                <td>
+                                    <input type="radio" data-dojo-type="dijit.form.RadioButton" data-dojo-props="name:'printUnits',checked:true,value:'esriInches'"
+                                        data-dojo-attach-event="onChange:_adjustMapSketch"/>
+                                    Inches
+                                    <input type="radio" data-dojo-type="dijit.form.RadioButton" data-dojo-props="name:'printUnits',value:'esriCentimeters'"/>
+                                    Centimeters
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="mapSketch" style="position:relative;width:100%;height:100%;">
+                        <div id="paperMap" style="border:2px solid #FF0000;background-color:rgba(255,0,0,0.3);"></div>
+                        <div id="browserMap" style="border:2px solid #000000;background-color:rgba(0,0,0,0.0);"></div>
+                    </div>
+                    <div id="mapSketchLegend">
+                        <table cellspacing="5">
+                            <tr>
+                                <td>
+                                    <div id="browserMapLegend" style="width:28px;height:17px;border:2px solid #FF0000;background-color:rgba(255,0,0,0.3);"></div>
+                                </td>
+                                <td>
+                                    Printed map
+                                </td>
+                                <td>
+                                    &nbsp;&nbsp;
+                                </td>
+                                <td>
+                                    <div id="paperMapLegend" style="width:28px;height:17px;border:2px solid #000000;background-color:rgba(0,0,0,0.0);"></div>
+                                </td>
+                                <td>
+                                    Map on screen
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-dojo-type="dijit.form.Button" data-dojo-props="busyLabel:'printing',iconClass:'printIcon'"
+        data-dojo-attach-event="onClick:print" data-dojo-attach-point="printButtonDijit">
+            Print
+        </div>
+    </div>
+    <div data-dojo-attach-point="printResultsNode" class="resultsContainer">
+    </div>
+    <div data-dojo-attach-point="clearActionBarNode" class="buttonActionBar"
+    style="display:none;padding:0;">
+        <div data-dojo-type="dijit.form.Button" data-dojo-props="iconClass:'clearIcon'"
+        data-dojo-attach-event="onClick:clearResults">
+            Clear Prints
+        </div>
+    </div>
+</div>
